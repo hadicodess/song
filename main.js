@@ -3,7 +3,8 @@ leftWristX = ""
 leftWristY = "" 
 rightWristX = "" 
 rightWristY = "" 
-scoreleftWrist = 0
+scoreleftWrist = 0 
+scorerightWrist = 0
  function setup()
 {
      canvas = createCanvas(600, 500); 
@@ -77,7 +78,9 @@ function play()
    if(results.length > 0) 
    {
      console.log(results); 
-     scoreleftWrist = results[0].pose.keypoints[10].score; 
+     scoreleftWrist = results[0].pose.keypoints[9].score; 
+     scorerightWrist = results[0].pose.keypoints[18].score;  
+     console.log("scoreLeftWrist =" + scoreleftWrist + "scorerightWrist =" + scorerightWrist);
      
      leftWristX = results[0].pose.leftWrist.x; 
      leftWristY = results[0].pose.leftWrist.y;   
